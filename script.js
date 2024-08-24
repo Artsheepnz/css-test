@@ -3,8 +3,7 @@ let currentSongIndex = 0;
 
 const playlist = [
     {
-        title: "HEAT WAV.",
-        artist: "Wavey Davey",
+        title: "HEAT WAV.", artist: "Wavey Davey",
         videoId: "mRD0-GxqHVo",
         albumCover: "assets/album1.png",
     },
