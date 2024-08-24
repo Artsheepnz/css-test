@@ -9,16 +9,15 @@ body {
 }
 
 .music-widget {
-    background-color: transparent; /* Make the background transparent */
+    background-color: #fcfcfa;
     border-radius: 10px;
-    box-shadow: none; /* Remove the box shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
 }
-
 
 .album-cover img {
     width: 150px;
@@ -34,23 +33,27 @@ body {
 
 .now-playing {
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 #song-title {
     font-weight: bold;
     font-size: 1.2em;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
 }
 
 #artist {
     color: #666;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
 }
 
 #timeline {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 #progress-bar {
