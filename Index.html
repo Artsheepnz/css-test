@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Playlist Widget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="music-widget">
+        <div class="album-cover">
+            <img id="album-cover-img" src="assets/album1.png" alt="Album Cover">
+        </div>
+        <div class="player-controls">
+            <div class="now-playing">
+                <p id="song-title">Song Title</p>
+                <p id="artist">Artist Name</p>
+                <div id="timeline">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="progress-bar" value="0">
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="prev-btn">⏮️</button>
+                <button id="play-pause-btn">▶️</button>
+                <button id="next-btn">⏭️</button>
+                <button id="rewind-btn">⏪</button>
+            </div>
+            <div class="upcoming-songs">
+                <h3>Upcoming Songs</h3>
+                <ul id="upcoming-list">
+                    <li>Next Song 1</li>
+                    <li>Next Song 2</li>
+                    <li>Next Song 3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden YouTube player element -->
+    <div id="player" style="display: none;"></div>
+
+    <!-- YouTube IFrame API script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    
+    <!-- Your custom script with defer attribute -->
+    <script src="script.js" defer></script>
+</body>
+</html>

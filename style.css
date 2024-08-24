@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.music-widget {
+    background-color: #fcfcfa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.album-cover img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.player-controls {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.now-playing {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#song-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#artist {
+    color: #666;
+}
+
+#timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#progress-bar {
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.upcoming-songs {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.upcoming-songs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.upcoming-songs li {
+    margin: 5px 0;
+}
