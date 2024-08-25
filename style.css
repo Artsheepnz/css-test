@@ -30,7 +30,7 @@ body {
 .now-playing {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 5px; /* Reduced margin */
     width: 100%;
 }
 
@@ -45,14 +45,15 @@ body {
 .song-details {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    justify-content: center; /* Align content vertically */
+    width: calc(100% - 100px); /* Adjusted width to align with album cover */
 }
 
 #timeline {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 5px; /* Reduced margin */
 }
 
 #progress-bar {
@@ -62,24 +63,21 @@ body {
 
 .controls {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
+    justify-content: flex-start; /* Align controls to start */
+    gap: 5px; /* Reduced gap between buttons */
+    margin-top: 10px; /* Reduced margin */
+    align-items: center; /* Align controls vertically with the timeline */
 }
 
-.upcoming-songs img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-right: 10px;
+.upcoming-songs {
+    margin-top: 10px; /* Reduced margin */
+    width: 100%;
 }
-
 
 .upcoming-songs ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-top: 0;
 }
 
 .upcoming-songs li {
