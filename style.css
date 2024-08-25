@@ -30,8 +30,8 @@ body {
 .now-playing {
     display: flex;
     align-items: center;
-    margin-bottom: 0; /* Removed bottom margin */
     width: 100%;
+    padding: 0; /* Removed padding */
 }
 
 .album-cover img {
@@ -46,7 +46,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: calc(100% - 110px); /* Adjusted width to align with album cover and reduce gap */
+    width: calc(100% - 110px); /* Ensures the song details section takes up the remaining space */
+}
+
+#song-title, #artist {
+    margin: 0; /* Removed margins */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
 }
 
 #timeline {
@@ -63,10 +70,16 @@ body {
 
 .controls {
     display: flex;
-    justify-content: flex-start; /* Align controls to start */
-    gap: 3px; /* Further reduced gap between buttons */
+    justify-content: flex-start;
+    gap: 3px; /* Reduced gap between buttons */
     margin-top: 5px; /* Reduced margin */
-    align-items: center; /* Align controls vertically with the timeline */
+    align-items: center;
+    flex-wrap: wrap; /* Allow buttons to wrap if needed */
+}
+
+button {
+    padding: 5px; /* Reduce button padding */
+    font-size: 14px; /* Reduce button font size if necessary */
 }
 
 .upcoming-songs {
