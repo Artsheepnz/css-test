@@ -30,51 +30,50 @@ body {
 .now-playing {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Space between album cover and the rest */
     width: 100%;
-    padding: 0; /* Removed padding */
+    padding: 0; /* Ensure no padding */
+    gap: 10px; /* Add a small gap between album cover and text/buttons */
 }
 
-.album-cover img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 3px;
-    margin-right: 10px; /* Reduced right margin */
+.album-cover {
+    flex-shrink: 0; /* Prevent album cover from shrinking */
 }
 
 .song-details {
+    flex-grow: 1; /* Ensure the song details take up all remaining space */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: calc(100% - 110px); /* Ensures the song details section takes up the remaining space */
 }
 
 #song-title, #artist {
-    margin: 0; /* Removed margins */
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    margin: 0; /* Remove any margins */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+    width: 100%; /* Ensure it takes full width */
 }
 
 #timeline {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 2px; /* Reduced margin */
+    margin-top: 5px; /* Slight margin for separation */
 }
 
 #progress-bar {
     flex-grow: 1;
-    margin: 0 5px; /* Reduced margin */
+    margin: 0 5px;
 }
 
 .controls {
     display: flex;
-    justify-content: flex-start;
-    gap: 3px; /* Reduced gap between buttons */
-    margin-top: 5px; /* Reduced margin */
+    justify-content: space-around; /* Space out buttons evenly */
     align-items: center;
-    flex-wrap: wrap; /* Allow buttons to wrap if needed */
+    margin-top: 0; /* Remove top margin */
+    gap: 5px; /* Small gap between buttons */
+    flex-shrink: 0; /* Prevent controls from shrinking */
 }
 
 button {
