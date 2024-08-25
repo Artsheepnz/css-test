@@ -9,15 +9,15 @@ const playlist = [
         albumCover: "assets/album1.png",
     },
     {
-        title: "Hi bili wyd?",
-        artist: "bcksht girl auck",
-        videoId: "huGd4efgdPA",
+        title: "song title",
+        artist: "artist",
+        videoId: "RMPX_vgqQnM",
         albumCover: "assets/album2.png",
     },
     {
-        title: "PLS STAY",
-        artist: "ben bones",
-        videoId: "Oa_RSwwpPaA",
+        title: "POOLS",
+        artist: "By the Bay",
+        videoId: "33hMB7yo32Q",
         albumCover: "assets/album1.png",
     }
 ];
