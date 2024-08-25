@@ -67,12 +67,14 @@ body {
     margin-top: 15px;
 }
 
-.upcoming-songs {
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.upcoming-songs img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
 }
+
 
 .upcoming-songs ul {
     list-style: none;
