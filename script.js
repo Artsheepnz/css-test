@@ -123,7 +123,18 @@ function updateUpcomingList() {
     upcomingList.innerHTML = '';
     for (let i = currentSongIndex + 1; i < playlist.length; i++) {
         const li = document.createElement('li');
-        li.textContent = `${playlist[i].title} - ${playlist[i].artist}`;
+
+        const img = document.createElement('img');
+        img.src = playlist[i].albumCover;
+        img.alt = `Album cover for ${playlist[i].title}`;
+        img.style.width = '50px';  // Adjust the size as needed
+        img.style.height = '50px';
+        img.style.borderRadius = '5px';
+        img.style.marginRight = '10px';
+
+        li.appendChild(img);
+        li.appendChild(document.createTextNode(`${playlist[i].title} - ${playlist[i].artist}`));
+        
         upcomingList.appendChild(li);
     }
 }
