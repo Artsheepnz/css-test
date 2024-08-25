@@ -9,9 +9,9 @@ body {
 }
 
 .music-widget {
-    background-color: transparent; /* Make the background transparent */
+    background-color: transparent;
     border-radius: 10px;
-    box-shadow: none; /* Remove the box shadow */
+    box-shadow: none;
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -19,34 +19,33 @@ body {
     padding: 20px;
 }
 
-.album-cover img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
 .player-controls {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     margin-top: 20px;
+    align-items: center;
 }
 
 .now-playing {
-    text-align: center;
+    display: flex;
+    align-items: center;
     margin-bottom: 15px;
+    width: 100%;
 }
 
-#song-title {
-    font-weight: bold;
-    font-size: 1.2em;
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
+.album-cover img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 15px;
 }
 
-#artist {
-    color: #666;
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
+.song-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 #timeline {
@@ -65,18 +64,32 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin-top: 15px;
 }
 
 .upcoming-songs {
     margin-top: 20px;
-    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .upcoming-songs ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .upcoming-songs li {
+    display: flex;
+    align-items: center;
     margin: 5px 0;
+}
+
+.upcoming-songs img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
 }
