@@ -18,7 +18,7 @@ const playlist = [
         title: "PLS STAY",
         artist: "ben bones",
         videoId: "Oa_RSwwpPaA",
-        albumCover: "assets/album3.png",
+        albumCover: "assets/album1.png",
     }
 ];
 
