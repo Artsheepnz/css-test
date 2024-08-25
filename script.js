@@ -3,7 +3,7 @@ let currentSongIndex = 0;
 
 const playlist = [
     {
-        title: "HEAT WAV.", 
+        title: "HEAT WAV.",
         artist: "Wavey Davey",
         videoId: "mRD0-GxqHVo",
         albumCover: "assets/album1.png",
@@ -59,57 +59,47 @@ function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
         nextSong();
     }
-    if (event.data == YT.PlayerState.PAUSED) {
-        document.getElementById('play-pause-btn').textContent = '▶️';
-    }
     if (event.data == YT.PlayerState.PLAYING) {
-        document.getElementById('play-pause-btn').textContent = '⏸️';
+        updateSongDuration();
     }
 }
 
-function playPauseSong() {
-    const playerState = player.getPlayerState();
-    if (playerState == YT.PlayerState.PLAYING) {
-        player.pauseVideo();
-    } else {
-        player.playVideo();
-    }
+function updateSongDuration() {
+    const duration = player.getDuration();
+    document.getElementById('duration').textContent = formatTime(duration);
+}
+
+function updateUpcomingList() {
+    const upcomingList = document.getElementById('upcoming-list');
+    upcomingList.innerHTML = '';
+
+    playlist.forEach((song, index) => {
+        if (index > currentSongIndex) {
+            const tempPlayer = new YT.Player(`temp-player-${index}`, {
+                height: '0',
+                width: '0',
+                videoId: song.videoId,
+                events: {
+                    'onReady': function(event) {
+                        const duration = event.target.getDuration();
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            <img src="${song.albumCover}" alt="Album Cover">
+                            <span class="upcoming-title">${song.title} - ${song.artist}</span>
+                            <span class="upcoming-time">${formatTime(duration)}</span>
+                        `;
+                        upcomingList.appendChild(li);
+                        tempPlayer.destroy();
+                    }
+                }
+            });
+        }
+    });
 }
 
 function nextSong() {
     currentSongIndex = (currentSongIndex + 1) % playlist.length;
     loadSong(currentSongIndex);
-}
-
-function prevSong() {
-    currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
-    loadSong(currentSongIndex);
-}
-
-function rewindSong() {
-    player.seekTo(0);
-}
-
-function updateProgressBar() {
-    const progressBar = document.getElementById('progress-bar');
-    const currentTime = document.getElementById('current-time');
-    const duration = document.getElementById('duration');
-
-    setInterval(() => {
-        if (player && player.getCurrentTime) {
-            const current = player.getCurrentTime();
-            const total = player.getDuration();
-            progressBar.value = (current / total) * 100;
-            currentTime.textContent = formatTime(current);
-            duration.textContent = formatTime(total);
-        }
-    }, 1000);
-    
-    // Seek to the position when the user changes the progress bar
-    progressBar.addEventListener('input', () => {
-        const seekTo = (progressBar.value / 100) * player.getDuration();
-        player.seekTo(seekTo);
-    });
 }
 
 function formatTime(seconds) {
@@ -118,28 +108,15 @@ function formatTime(seconds) {
     return `${min}:${sec < 10 ? '0' : ''}${sec}`;
 }
 
-function updateUpcomingList() {
-    const upcomingList = document.getElementById('upcoming-list');
-    upcomingList.innerHTML = '';
-    for (let i = currentSongIndex + 1; i < playlist.length; i++) {
-        const li = document.createElement('li');
+function updateProgressBar() {
+    const progressBar = document.getElementById('progress-bar');
+    const currentTime = player.getCurrentTime();
+    const duration = player.getDuration();
+    progressBar.value = (currentTime / duration) * 100;
 
-        const img = document.createElement('img');
-        img.src = playlist[i].albumCover;
-        img.alt = `Album cover for ${playlist[i].title}`;
-        img.style.width = '50px';  // Adjust the size as needed
-        img.style.height = '50px';
-        img.style.borderRadius = '5px';
-        img.style.marginRight = '10px';
+    document.getElementById('current-time').textContent = formatTime(currentTime);
 
-        li.appendChild(img);
-        li.appendChild(document.createTextNode(`${playlist[i].title} - ${playlist[i].artist}`));
-        
-        upcomingList.appendChild(li);
+    if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+        requestAnimationFrame(updateProgressBar);
     }
 }
-
-document.getElementById('play-pause-btn').addEventListener('click', playPauseSong);
-document.getElementById('next-btn').addEventListener('click', nextSong);
-document.getElementById('prev-btn').addEventListener('click', prevSong);
-document.getElementById('rewind-btn').addEventListener('click', rewindSong);
