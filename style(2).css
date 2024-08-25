@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.music-widget {
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: none;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.now-playing {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    width: 100%;
+    gap: 10px;
+}
+
+.album-cover img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.song-details-controls {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.song-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#song-title {
+    margin: 0;
+    font-size: 18px; /* Adjusted title size */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+#artist {
+    margin: 0;
+    font-size: 14px; /* Smaller artist name */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+#timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+#progress-bar {
+    flex-grow: 1;
+    margin: 0 5px;
+    background-color: #A9A9A9; /* Darker grey */
+}
+
+#progress-bar::-webkit-slider-thumb {
+    width: 10px; /* Smaller circle */
+    height: 10px;
+    background-color: #A9A9A9; /* Darker grey */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    justify-content: center; /* Centered under album cover */
+    gap: 5px;
+    margin-top: 10px;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.song-blurb {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.upcoming-songs {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.upcoming-songs ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.upcoming-songs li {
+    display: flex;
+    justify-content: space-between; /* Add space between song and time */
+    align-items: center;
+    margin: 5px 0;
+}
+
+.upcoming-songs img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 1px;
+    margin-right: 10px;
+}
+
+.upcoming-time {
+    font-size: 12px;
+    color: #666;
+}
