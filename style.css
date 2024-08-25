@@ -109,11 +109,6 @@ body {
     color: #666;
 }
 
-.upcoming-songs {
-    margin-top: 10px;
-    width: 100%;
-}
-
 .upcoming-songs ul {
     list-style: none;
     padding: 0;
@@ -122,7 +117,6 @@ body {
 
 .upcoming-songs li {
     display: flex;
-    justify-content: space-between; /* Add space between song and time */
     align-items: center;
     margin: 5px 0;
 }
@@ -135,7 +129,15 @@ body {
     margin-right: 10px;
 }
 
+.upcoming-title {
+    flex-grow: 1; /* Allow title to take up space */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .upcoming-time {
+    margin-left: 10px;
     font-size: 12px;
     color: #666;
 }
