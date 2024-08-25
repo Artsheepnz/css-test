@@ -30,36 +30,43 @@ body {
 .now-playing {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space between album cover and the rest */
     width: 100%;
-    padding: 0; /* Ensure no padding */
-    gap: 10px; /* Add a small gap between album cover and text/buttons */
+    gap: 10px; /* Space between album cover and text/controls */
 }
 
-.album-cover {
+.album-cover img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
     flex-shrink: 0; /* Prevent album cover from shrinking */
 }
 
+.song-details-controls {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
 .song-details {
-    flex-grow: 1; /* Ensure the song details take up all remaining space */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 #song-title, #artist {
-    margin: 0; /* Remove any margins */
-    white-space: nowrap; /* Prevent wrapping */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis if text is too long */
-    width: 100%; /* Ensure it takes full width */
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 #timeline {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 5px; /* Slight margin for separation */
+    margin-top: 5px;
 }
 
 #progress-bar {
@@ -69,11 +76,12 @@ body {
 
 .controls {
     display: flex;
-    justify-content: space-around; /* Space out buttons evenly */
+    justify-content: flex-start;
+    gap: 5px;
+    margin-top: 10px;
     align-items: center;
-    margin-top: 0; /* Remove top margin */
-    gap: 5px; /* Small gap between buttons */
-    flex-shrink: 0; /* Prevent controls from shrinking */
+    flex-shrink: 0;
+    padding: 0;
 }
 
 button {
