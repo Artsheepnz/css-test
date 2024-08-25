@@ -109,6 +109,11 @@ body {
     color: #666;
 }
 
+.upcoming-songs {
+    margin-top: 10px;
+    width: 100%;
+}
+
 .upcoming-songs ul {
     list-style: none;
     padding: 0;
@@ -117,17 +122,20 @@ body {
 
 .upcoming-songs li {
     display: flex;
-    justify-content: space-between; /* Space between song title and time */
+    justify-content: space-between; /* Add space between song and time */
     align-items: center;
     margin: 5px 0;
 }
 
-.upcoming-title {
-    flex-grow: 1; /* Allow title to take up space */
+.upcoming-songs img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 1px;
+    margin-right: 10px;
 }
 
 .upcoming-time {
-    margin-left: 10px;
     font-size: 12px;
     color: #666;
 }
