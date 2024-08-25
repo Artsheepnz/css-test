@@ -29,16 +29,16 @@ body {
 
 .now-playing {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
     width: 100%;
-    gap: 10px; /* Space between album cover and text/controls */
+    gap: 10px;
 }
 
 .album-cover img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    flex-shrink: 0; /* Prevent album cover from shrinking */
+    flex-shrink: 0;
 }
 
 .song-details-controls {
@@ -54,8 +54,18 @@ body {
     justify-content: center;
 }
 
-#song-title, #artist {
+#song-title {
     margin: 0;
+    font-size: 18px; /* Adjusted title size */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+#artist {
+    margin: 0;
+    font-size: 14px; /* Smaller artist name */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -72,11 +82,20 @@ body {
 #progress-bar {
     flex-grow: 1;
     margin: 0 5px;
+    background-color: #A9A9A9; /* Darker grey */
+}
+
+#progress-bar::-webkit-slider-thumb {
+    width: 10px; /* Smaller circle */
+    height: 10px;
+    background-color: #A9A9A9; /* Darker grey */
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .controls {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center; /* Centered under album cover */
     gap: 5px;
     margin-top: 10px;
     align-items: center;
@@ -84,13 +103,14 @@ body {
     padding: 0;
 }
 
-button {
-    padding: 5px; /* Reduce button padding */
-    font-size: 14px; /* Reduce button font size if necessary */
+.song-blurb {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
 }
 
 .upcoming-songs {
-    margin-top: 10px; /* Reduced margin */
+    margin-top: 10px;
     width: 100%;
 }
 
@@ -102,6 +122,7 @@ button {
 
 .upcoming-songs li {
     display: flex;
+    justify-content: space-between; /* Add space between song and time */
     align-items: center;
     margin: 5px 0;
 }
@@ -112,4 +133,9 @@ button {
     object-fit: cover;
     border-radius: 1px;
     margin-right: 10px;
+}
+
+.upcoming-time {
+    font-size: 12px;
+    color: #666;
 }
