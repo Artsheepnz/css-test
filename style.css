@@ -29,16 +29,9 @@ body {
 
 .now-playing {
     display: flex;
-    align-items: center; /* Align items to the center horizontally */
+    align-items: flex-start; /* Align items to the top */
     width: 100%;
     gap: 10px;
-}
-
-.album-cover {
-    display: flex;
-    flex-direction: column; /* Stack image and controls */
-    align-items: center; /* Center them vertically */
-    width: 110px; /* Maintain the album cover's width */
 }
 
 .album-cover img {
@@ -55,11 +48,59 @@ body {
     justify-content: space-between;
 }
 
+.song-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#song-title {
+    margin: 0;
+    font-size: 18px; /* Adjusted title size */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+#artist {
+    margin: 0;
+    font-size: 14px; /* Smaller artist name */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+#timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+#progress-bar {
+    flex-grow: 1;
+    margin: 0 5px;
+    background-color: #A9A9A9; /* Darker grey */
+}
+
+#progress-bar::-webkit-slider-thumb {
+    width: 10px; /* Smaller circle */
+    height: 10px;
+    background-color: #A9A9A9; /* Darker grey */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 .controls {
     display: flex;
-    justify-content: center; /* Center the controls */
+    justify-content: center; /* Centered under album cover */
     gap: 5px;
     margin-top: 10px;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0;
 }
 
 .song-blurb {
