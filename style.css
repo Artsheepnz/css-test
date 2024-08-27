@@ -72,6 +72,11 @@ body {
     width: 100%;
 }
 
+.song-blurb p {
+    margin: 0; /* Removes margin from the blurb paragraph */
+    padding: 0;
+}
+
 #timeline {
     display: flex;
     align-items: center;
