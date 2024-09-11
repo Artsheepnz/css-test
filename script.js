@@ -118,10 +118,9 @@ function formatTime(seconds) {
     return `${min}:${sec < 10 ? '0' : ''}${sec}`;
 }
 
-async function updateUpcomingList() {
+function updateUpcomingList() {
     const upcomingList = document.getElementById('upcoming-list');
     upcomingList.innerHTML = '';
-
     for (let i = currentSongIndex + 1; i < playlist.length; i++) {
         const li = document.createElement('li');
 
@@ -134,30 +133,10 @@ async function updateUpcomingList() {
         img.style.marginRight = '10px';
 
         li.appendChild(img);
-
-        // Fetch video duration from YouTube API
-        const duration = await fetchVideoDuration(playlist[i].videoId);
-        li.appendChild(document.createTextNode(`${playlist[i].title} - ${playlist[i].artist} (${duration})`));
-
+        li.appendChild(document.createTextNode(`${playlist[i].title} - ${playlist[i].artist}`));
+        
         upcomingList.appendChild(li);
     }
-}
-
-async function fetchVideoDuration(videoId) {
-    const apiKey = 'YOUR_YOUTUBE_API_KEY';
-    const apiUrl = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=contentDetails&key=${apiKey}`;
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    const durationISO = data.items[0].contentDetails.duration;
-    return convertISO8601Duration(durationISO);
-}
-
-function convertISO8601Duration(duration) {
-    const match = duration.match(/PT(\d+M)?(\d+S)?/);
-    const minutes = match[1] ? parseInt(match[1]) : 0;
-    const seconds = match[2] ? parseInt(match[2]) : 0;
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-}
 }
 
 document.getElementById('play-pause-btn').addEventListener('click', playPauseSong);
