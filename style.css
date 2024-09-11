@@ -128,8 +128,8 @@ body {
 
 .upcoming-songs li {
     display: flex;
-    justify-content: space-between; /* Add space between song and time */
-    align-items: left;
+    align-items: center;
+    justify-content: flex-start; /* Aligns everything to the left */
     margin: 5px 0;
 }
 
