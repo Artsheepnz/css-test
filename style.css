@@ -129,7 +129,7 @@ body {
 .upcoming-songs li {
     display: flex;
     justify-content: space-between; /* Add space between song and time */
-    align-items: center;
+    align-items: left;
     margin: 5px 0;
 }
 
