@@ -1,20 +1,25 @@
-# Music Playlist Widget
 
-This project is a simple inline widget to play a music playlist within a webpage. The widget uses the YouTube IFrame API to play music videos directly from YouTube. The upcoming songs are displayed, and the currently playing song has a timeline, song title, and artist.
 
-## Features
-- Play, pause, skip, and rewind songs.
-- Display the current song's title, artist, and album cover.
-- Show upcoming songs.
-- Real-time updating of the timeline and timestamps.
+### This is an inline embed to play a music playlist within a webpage. uses YouTube iframe API to play music videos directly from YouTube. upcoming songs are displayed, and the currently playing song has a timeline, song title, and artist.
 
-## Setup
-1. Clone the repository.
-2. Place your album cover images in the `assets/` folder.
-3. Update the `playlist` array in `script.js` with your songs, artists, video IDs, and album covers.
-4. Host the project on GitHub and deploy it using Netlify or any static hosting service.
 
-## Deployment
-1. Upload the repository to GitHub.
-2. Connect the repository to Netlify.
-3. Deploy the site and enjoy your music playlist widget!
+## Features working rn
+
+    Play, pause, skip, and rewind songs.
+    Display the current song's title, artist, and album cover.
+    Show upcoming songs.
+    Real-time updating of the timeline and timestamps.
+
+### to impliment
+
+    updating timecode/prediction on upcoming songs
+    move the dumb name to the left. please. im begging, hands knees please
+    barbproof item (floating play/pause/current song/upcoming?)
+    slimline
+    new play/pause imgs
+
+### Setup
+
+album cover images in the assets/ folder. Update the playlist array in script.js with songs, artists, video IDs, and album covers ect Host on GitHub and deploy it?
+Deployment
+GitHub commit Netlify boom music playlist
