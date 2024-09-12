@@ -95,7 +95,7 @@ body {
     appearance: none;
     width: 5px; /* Make the thumb 50% smaller */
     height: 5px; /* Match width to create a smaller circle */
-    background-color: #A9A9A9; /* Thumb color */
+    background-color: transparent; /* Thumb color */
     border-radius: 50%; /* Makes it circular */
     cursor: pointer;
 }
@@ -103,7 +103,7 @@ body {
 #progress-bar::-moz-range-thumb {
     width: 5px; /* Same for Firefox */
     height: 5px;
-    background-color: #A9A9A9;
+    background-color: transparent;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -111,7 +111,7 @@ body {
 #progress-bar::-ms-thumb {
     width: 5px; /* Same for Internet Explorer/Edge */
     height: 5px;
-    background-color: #A9A9A9;
+    background-color: transparent;
     border-radius: 50%;
     cursor: pointer;
 }
