@@ -126,6 +126,9 @@ function updateUpcomingList() {
     
     for (let i = currentSongIndex + 1; i < playlist.length; i++) {
         const li = document.createElement('li');
+        li.style.display = 'flex';
+        li.style.alignItems = 'center';
+        li.style.marginBottom = '10px'; // Add margin between list items
 
         // Create album cover
         const img = document.createElement('img');
@@ -138,18 +141,20 @@ function updateUpcomingList() {
 
         // Create div to hold song info and duration
         const songInfo = document.createElement('div');
-        songInfo.style.display = 'flex';
-        songInfo.style.flexDirection = 'column';
-        
+        songInfo.style.flex = '1'; // Allow it to grow and take up remaining space
+
         // Create song title and artist
         const titleArtist = document.createElement('p');
         titleArtist.textContent = `${playlist[i].title} - ${playlist[i].artist}`;
-        
+        titleArtist.style.margin = '0'; // Remove margin for cleaner layout
+
         // Create duration element
         const duration = document.createElement('span');
         duration.textContent = playlist[i].duration;
         duration.classList.add('upcoming-time');
-        
+        duration.style.marginLeft = 'auto'; // Align duration to the right
+        duration.style.color = '#666'; // Match your existing styling
+
         // Append title and duration to song info
         songInfo.appendChild(titleArtist);
         songInfo.appendChild(duration);
