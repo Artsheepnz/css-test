@@ -148,13 +148,21 @@ function updateUpcomingList() {
 // New: Load the static duration for each upcoming song
 function loadUpcomingSongDurations() {
     playlist.forEach((song, index) => {
-        const player = new YT.Player(`player-${index}`, {
+        const hiddenIframeId = `hidden-player-${index}`;
+        // Create a hidden div for each song
+        const hiddenIframe = document.createElement('div');
+        hiddenIframe.id = hiddenIframeId;
+        hiddenIframe.style.display = 'none';
+        document.body.appendChild(hiddenIframe);
+
+        const tempPlayer = new YT.Player(hiddenIframeId, {
             videoId: song.videoId,
             events: {
                 'onReady': function(event) {
                     const duration = event.target.getDuration();
                     const formattedDuration = formatTime(duration);
-                    document.getElementById(`duration-${index}`).innerText = formattedDuration;
+                    document.getElementById(`duration-${index + currentSongIndex + 1}`).innerText = formattedDuration;
+                    document.body.removeChild(hiddenIframe); // Remove hidden player after fetching duration
                 }
             }
         });
