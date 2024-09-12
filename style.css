@@ -85,36 +85,64 @@ body {
 }
 
 #progress-bar {
-    flex-grow: 1;
-    margin: 0 5px;
-    background-color: transparent; /* Darker grey */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px; /* Height of the slider track */
+    background-color: #d3d3d3; /* Background color of the slider track */
+    border-radius: 5px;
+    outline: none;
 }
 
+/* WebKit browsers (Chrome, Safari) */
 #progress-bar::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 5px; /* Make the thumb 50% smaller */
-    height: 5px; /* Match width to create a smaller circle */
-    background-color: transparent; /* Thumb color */
-    border-radius: 50%; /* Makes it circular */
+    width: 10px; /* Thumb width */
+    height: 10px; /* Thumb height */
+    background-color: #A9A9A9; /* Thumb color */
+    border-radius: 50%; /* Makes the thumb circular */
+    border: 2px solid #fff; /* Optional: Adds a white border to make the thumb stand out */
     cursor: pointer;
 }
 
+#progress-bar::-webkit-slider-runnable-track {
+    background-color: #d3d3d3; /* Background color of the track */
+    border-radius: 5px;
+}
+
+/* Firefox */
 #progress-bar::-moz-range-thumb {
-    width: 5px; /* Same for Firefox */
-    height: 5px;
-    background-color: transparent;
+    width: 10px;
+    height: 10px;
+    background-color: #A9A9A9;
     border-radius: 50%;
+    border: 2px solid #fff;
     cursor: pointer;
 }
 
+#progress-bar::-moz-range-track {
+    background-color: #d3d3d3;
+    border-radius: 5px;
+}
+
+/* IE/Edge */
 #progress-bar::-ms-thumb {
-    width: 5px; /* Same for Internet Explorer/Edge */
-    height: 5px;
-    background-color: transparent;
+    width: 10px;
+    height: 10px;
+    background-color: #A9A9A9;
     border-radius: 50%;
+    border: 2px solid #fff;
     cursor: pointer;
 }
+
+#progress-bar::-ms-track {
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    border: none;
+    color: transparent; /* Removes the default IE track color */
+}
+
 
 .controls {
     display: flex;
