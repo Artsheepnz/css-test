@@ -87,7 +87,7 @@ body {
 #progress-bar {
     flex-grow: 1;
     margin: 0 5px;
-    background-color: #A9A9A9; /* Darker grey */
+    background-color: transparent; /* Darker grey */
 }
 
 #progress-bar::-webkit-slider-thumb {
