@@ -91,9 +91,27 @@ body {
 }
 
 #progress-bar::-webkit-slider-thumb {
-    width: 10px; /* Smaller circle */
-    height: 10px;
-    background-color: #A9A9A9; /* Darker grey */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px; /* Make the thumb 50% smaller */
+    height: 5px; /* Match width to create a smaller circle */
+    background-color: #A9A9A9; /* Thumb color */
+    border-radius: 50%; /* Makes it circular */
+    cursor: pointer;
+}
+
+#progress-bar::-moz-range-thumb {
+    width: 5px; /* Same for Firefox */
+    height: 5px;
+    background-color: #A9A9A9;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#progress-bar::-ms-thumb {
+    width: 5px; /* Same for Internet Explorer/Edge */
+    height: 5px;
+    background-color: #A9A9A9;
     border-radius: 50%;
     cursor: pointer;
 }
