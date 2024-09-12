@@ -123,9 +123,11 @@ function formatTime(seconds) {
 function updateUpcomingList() {
     const upcomingList = document.getElementById('upcoming-list');
     upcomingList.innerHTML = '';
+    
     for (let i = currentSongIndex + 1; i < playlist.length; i++) {
         const li = document.createElement('li');
 
+        // Create album cover
         const img = document.createElement('img');
         img.src = playlist[i].albumCover;
         img.alt = `Album cover for ${playlist[i].title}`;
@@ -134,11 +136,29 @@ function updateUpcomingList() {
         img.style.borderRadius = '5px';
         img.style.marginRight = '10px';
 
+        // Create div to hold song info and duration
         const songInfo = document.createElement('div');
-        songInfo.innerHTML = `${playlist[i].title} - ${playlist[i].artist} <span class="upcoming-time">${playlist[i].duration}</span>`;
+        songInfo.style.display = 'flex';
+        songInfo.style.flexDirection = 'column';
+        
+        // Create song title and artist
+        const titleArtist = document.createElement('p');
+        titleArtist.textContent = `${playlist[i].title} - ${playlist[i].artist}`;
+        
+        // Create duration element
+        const duration = document.createElement('span');
+        duration.textContent = playlist[i].duration;
+        duration.classList.add('upcoming-time');
+        
+        // Append title and duration to song info
+        songInfo.appendChild(titleArtist);
+        songInfo.appendChild(duration);
 
+        // Append image and song info to list item
         li.appendChild(img);
         li.appendChild(songInfo);
+        
+        // Append the list item to the upcoming list
         upcomingList.appendChild(li);
     }
 }
