@@ -3,22 +3,25 @@ let currentSongIndex = 0;
 
 const playlist = [
     {
-        title: "HEAT WAV.", 
+        title: "HEAT WAV.",
         artist: "Wavey Davey",
         videoId: "mRD0-GxqHVo",
         albumCover: "assets/album1.png",
+        duration: "3:56"
     },
     {
         title: "song title",
         artist: "artist",
         videoId: "RMPX_vgqQnM",
         albumCover: "assets/album2.png",
+        duration: "4:15"
     },
     {
         title: "POOLS",
         artist: "By the Bay",
         videoId: "33hMB7yo32Q",
         albumCover: "assets/album1.png",
+        duration: "2:45"
     }
 ];
 
@@ -105,7 +108,6 @@ function updateProgressBar() {
         }
     }, 1000);
     
-    // Seek to the position when the user changes the progress bar
     progressBar.addEventListener('input', () => {
         const seekTo = (progressBar.value / 100) * player.getDuration();
         player.seekTo(seekTo);
@@ -127,14 +129,16 @@ function updateUpcomingList() {
         const img = document.createElement('img');
         img.src = playlist[i].albumCover;
         img.alt = `Album cover for ${playlist[i].title}`;
-        img.style.width = '50px';  // Adjust the size as needed
+        img.style.width = '50px';
         img.style.height = '50px';
         img.style.borderRadius = '5px';
         img.style.marginRight = '10px';
 
+        const songInfo = document.createElement('div');
+        songInfo.innerHTML = `${playlist[i].title} - ${playlist[i].artist} <span class="upcoming-time">${playlist[i].duration}</span>`;
+
         li.appendChild(img);
-        li.appendChild(document.createTextNode(`${playlist[i].title} - ${playlist[i].artist}`));
-        
+        li.appendChild(songInfo);
         upcomingList.appendChild(li);
     }
 }
