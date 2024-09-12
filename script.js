@@ -24,7 +24,6 @@ const playlist = [
 
 function onYouTubeIframeAPIReady() {
     loadSong(currentSongIndex);
-    loadUpcomingSongDurations(); // Fetch and display durations for the upcoming songs
 }
 
 function loadSong(index) {
@@ -106,6 +105,7 @@ function updateProgressBar() {
         }
     }, 1000);
     
+    // Seek to the position when the user changes the progress bar
     progressBar.addEventListener('input', () => {
         const seekTo = (progressBar.value / 100) * player.getDuration();
         player.seekTo(seekTo);
@@ -127,7 +127,7 @@ function updateUpcomingList() {
         const img = document.createElement('img');
         img.src = playlist[i].albumCover;
         img.alt = `Album cover for ${playlist[i].title}`;
-        img.style.width = '50px';
+        img.style.width = '50px';  // Adjust the size as needed
         img.style.height = '50px';
         img.style.borderRadius = '5px';
         img.style.marginRight = '10px';
@@ -135,38 +135,8 @@ function updateUpcomingList() {
         li.appendChild(img);
         li.appendChild(document.createTextNode(`${playlist[i].title} - ${playlist[i].artist}`));
         
-        const durationSpan = document.createElement('span');
-        durationSpan.className = 'song-duration';
-        durationSpan.id = `duration-${i}`;
-        durationSpan.textContent = '0:00'; // Default placeholder until we fetch the actual duration
-        li.appendChild(durationSpan);
-
         upcomingList.appendChild(li);
     }
-}
-
-// New: Load the static duration for each upcoming song
-function loadUpcomingSongDurations() {
-    playlist.forEach((song, index) => {
-        const hiddenIframeId = `hidden-player-${index}`;
-        // Create a hidden div for each song
-        const hiddenIframe = document.createElement('div');
-        hiddenIframe.id = hiddenIframeId;
-        hiddenIframe.style.display = 'none';
-        document.body.appendChild(hiddenIframe);
-
-        const tempPlayer = new YT.Player(hiddenIframeId, {
-            videoId: song.videoId,
-            events: {
-                'onReady': function(event) {
-                    const duration = event.target.getDuration();
-                    const formattedDuration = formatTime(duration);
-                    document.getElementById(`duration-${index + currentSongIndex + 1}`).innerText = formattedDuration;
-                    document.body.removeChild(hiddenIframe); // Remove hidden player after fetching duration
-                }
-            }
-        });
-    });
 }
 
 document.getElementById('play-pause-btn').addEventListener('click', playPauseSong);
