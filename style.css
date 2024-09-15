@@ -31,7 +31,8 @@ body {
     display: flex;
     align-items: flex-start;
     width: 100%;
-    gap: 5px;
+    gap: 10px;
+    margin-bottom: 5px;
 }
 
 .album-cover img {
