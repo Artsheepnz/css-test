@@ -72,7 +72,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
-    margin-bottom: 4px; /* Slightly increased space between artist and description */
+    margin-bottom: -5px;
 }
 
 .song-blurb p {
