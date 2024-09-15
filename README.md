@@ -12,10 +12,7 @@
 
 ### to impliment
 
-    updating timecode/prediction on upcoming songs
-    move the dumb name to the left. please. im begging, hands knees please
     barbproof item (floating play/pause/current song/upcoming?)
-    slimline
     new play/pause imgs
 
 ### Setup
