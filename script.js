@@ -105,12 +105,20 @@ function updateProgressBar() {
             progressBar.value = (current / total) * 100;
             currentTime.textContent = formatTime(current);
             duration.textContent = formatTime(total);
+
+            // Update the gradient for played and unplayed sections
+            const val = progressBar.value;
+            progressBar.style.background = `linear-gradient(to right, #a9a9a9 ${val}%, #d3d3d3 ${val}%)`;
         }
     }, 1000);
-    
+
     progressBar.addEventListener('input', () => {
         const seekTo = (progressBar.value / 100) * player.getDuration();
         player.seekTo(seekTo);
+
+        // Update the gradient when user seeks
+        const val = progressBar.value;
+        progressBar.style.background = `linear-gradient(to right, #a9a9a9 ${val}%, #d3d3d3 ${val}%)`;
     });
 }
 
