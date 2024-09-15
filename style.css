@@ -62,6 +62,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
+    margin-bottom: 2px; /* Added spacing adjustment */
 }
 
 #artist {
@@ -71,19 +72,20 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
-    margin-bottom: -3px;
+    margin-bottom: 4px; /* Slightly increased space between artist and description */
 }
 
 .song-blurb p {
     margin: 0;
     padding: 0;
+    margin-top: 4px; /* Adjusted spacing between artist and blurb */
 }
 
 #timeline {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 3px;
+    margin-top: 6px; /* Slight increase in space above the progress bar */
     font-size: 10px; /* Reduce the font size for all text inside #timeline */
 }
 
