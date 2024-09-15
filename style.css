@@ -86,7 +86,7 @@ body {
 }
 
 #timeline span {
-    font-size: 10px; 
+    font-size: 5px; 
     color: #666;/* Keep the color of timestamps consistent */
 }
 
