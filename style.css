@@ -71,6 +71,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
+    margin-bottom: -7px;
 }
 
 .song-blurb p {
@@ -82,7 +83,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 5px;
+    margin-top: 3px;
     font-size: 10px; /* Reduce the font size for all text inside #timeline */
 }
 
@@ -168,7 +169,7 @@ body {
 }
 
 .upcoming-songs {
-    margin-top: 10px;
+    margin-top: 4px;
     width: 100%;
 }
 
