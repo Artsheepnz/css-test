@@ -193,8 +193,9 @@ body {
     margin: 5px 0;
 }
 
+/* Resizing the same image asset for the upcoming list */
 .upcoming-songs img {
-    width: 50px;
+    width: 50px; /* Smaller image size for the upcoming list */
     height: 50px;
     object-fit: cover;
     border-radius: 1px;
