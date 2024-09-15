@@ -164,6 +164,14 @@ body {
     margin: 6px;
 }
 
+/* Hover effect for buttons in the controls section */
+.controls button:hover {
+    background-color: #ddd; /* Light grey background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow effect */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    transform: scale(1.05); /* Slightly increases the size for a dynamic effect */
+}
+
 .song-blurb {
     margin-top: 10px;
     font-size: 12px;
