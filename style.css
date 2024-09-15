@@ -71,7 +71,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
-    margin-bottom: -4px;
+    margin-bottom: -3px;
 }
 
 .song-blurb p {
