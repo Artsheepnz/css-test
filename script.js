@@ -7,21 +7,24 @@ const playlist = [
         artist: "Wavey Davey",
         videoId: "mRD0-GxqHVo",
         albumCover: "assets/album1.png",
-        duration: "3:56"
+        duration: "3:56",
+        blurb: "you left me in a vapor trail :("
     },
     {
         title: "song title",
         artist: "artist",
         videoId: "RMPX_vgqQnM",
         albumCover: "assets/album2.png",
-        duration: "4:15"
+        duration: "4:15",
+        blurb: "A soulful melody that resonates deep with heart and mind."
     },
     {
         title: "POOLS",
         artist: "By the Bay",
         videoId: "33hMB7yo32Q",
         albumCover: "assets/album1.png",
-        duration: "2:45"
+        duration: "2:45",
+        blurb: "A laid-back tune perfect for chilling by the poolside."
     }
 ];
 
@@ -34,6 +37,7 @@ function loadSong(index) {
     document.getElementById('song-title').textContent = song.title;
     document.getElementById('artist').textContent = song.artist;
     document.getElementById('album-cover-img').src = song.albumCover;
+    document.querySelector('.song-blurb p').textContent = song.blurb;
 
     if (player) {
         player.loadVideoById(song.videoId);
@@ -178,6 +182,7 @@ function updateUpcomingList() {
     }
 }
 
+// Add event listeners for control buttons
 document.getElementById('play-pause-btn').addEventListener('click', playPauseSong);
 document.getElementById('next-btn').addEventListener('click', nextSong);
 document.getElementById('prev-btn').addEventListener('click', prevSong);
