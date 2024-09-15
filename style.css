@@ -166,7 +166,6 @@ body {
 
 /* Hover effect for buttons in the controls section */
 .controls button:hover {
-    background-color: #ddd; /* Light grey background on hover */
     transform: scale(1.05); /* Slightly increases the size for a dynamic effect */
 }
 
