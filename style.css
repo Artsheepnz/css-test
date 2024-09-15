@@ -82,6 +82,12 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-top: 5px;
+    font-size: 10px; /* Reduce the font size for all text inside #timeline */
+}
+
+#timeline span {
+    font-size: 10px; 
+    color: #666;/* Keep the color of timestamps consistent */
 }
 
 #progress-bar {
