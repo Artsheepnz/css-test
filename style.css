@@ -78,7 +78,7 @@ body {
 .song-blurb p {
     margin: 0;
     padding: 0;
-    margin-top: 4px; /* Adjusted spacing between artist and blurb */
+    margin-top: 2px; /* Adjusted spacing between artist and blurb */
 }
 
 #timeline {
