@@ -12,7 +12,6 @@
 
 ### to impliment
 
-    barbproof item (floating play/pause/current song/upcoming?)
     new play/pause imgs
 
 ### Setup
